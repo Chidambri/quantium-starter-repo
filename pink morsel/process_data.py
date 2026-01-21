@@ -1,9 +1,9 @@
 import pandas as pd
 
 # Read all CSV files
-df1 = pd.read_csv("data/daily_sales_data_0.csv")
-df2 = pd.read_csv("data/daily_sales_data_1.csv")
-df3 = pd.read_csv("data/daily_sales_data_2.csv")
+df1 = pd.read_csv("../data/daily_sales_data_0.csv")
+df2 = pd.read_csv("../data/daily_sales_data_1.csv")
+df3 = pd.read_csv("../data/daily_sales_data_2.csv")
 
 # Combine into one dataframe
 data = pd.concat([df1, df2, df3])
@@ -19,7 +19,7 @@ data["sales"] = data["quantity"] * data["price"]
 # keep only required column
 final_data = data[["sales", "date", "region"]]
 #save final output
-final_data.to_csv("formatted_sales_data.csv", index=False)
+final_data.to_csv("pink_morsels_sales.csv", index=False)
 
 
 
